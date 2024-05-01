@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  height: 80px;
+  margin: 18px;
+  mat-card {
+    border-left: 2px solid red;
+
+  }
+  .tile-online {
+    border-left: 2px solid green;
+  }
+
+  .first-row {
+    display: flex;
+    font-weight: bolder;
+
+    .name {
+        width: 30%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  height: 100%;
+  background-color: #ccc;
+
+  .header-container {
+    display: flex;
+    gap: 12px;
+    padding: 12px
+  }
+
+  #create-button {
+    background-color: blue;
+    color: lightgray;
+  }
+
+
+}
+

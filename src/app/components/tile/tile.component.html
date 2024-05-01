@@ -1,0 +1,9 @@
+<mat-card [class.tile-online]="this.data?.status === 'online'">
+    <mat-card-content>
+        <div class="first-row">
+            <div class="name">{{ this.data?.name }}</div>
+            <div>{{ this.data?.status }}</div>
+        </div>
+        <div>Description: {{ this.data?.description }}</div>
+    </mat-card-content>
+</mat-card>
