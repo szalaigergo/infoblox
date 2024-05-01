@@ -1,9 +1,28 @@
-<mat-card [class.tile-online]="this.data?.status === 'online'">
+<mat-card [ngClass]="{'online': this.data?.status === 'online', 'pending': this.data?.status === 'pending',}"  (click)="this.toggle()">
     <mat-card-content>
         <div class="first-row">
             <div class="name">{{ this.data?.name }}</div>
-            <div>{{ this.data?.status }}</div>
+            <info-status [status]="this.data?.status"></info-status>
+            <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_horiz</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="this.remove()">
+                  <mat-icon>delete</mat-icon>
+                  <span>Remove</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit</span>
+                </button>
+              </mat-menu>
         </div>
         <div>Description: {{ this.data?.description }}</div>
+
+        <div class="toggle" *ngIf="this.showOpen">
+            <div>GENERAL INFO</div>
+            <div>Server IP Address: {{ this.data?.server_ip }}</div>
+            <div>Server NAT IP Address: {{ this.data?.server_nat_ip }}</div>
+        </div>
     </mat-card-content>
 </mat-card>

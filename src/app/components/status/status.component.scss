@@ -1,0 +1,21 @@
+:host {
+  display: block;
+
+  .green {
+    color: green;
+  }
+  .red {
+    color: red;
+  }
+  .orange {
+    color: orange
+  }
+
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: capitalize;
+}
+}

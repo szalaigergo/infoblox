@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Create Server</h2>
+<mat-dialog-content>
+    <form [formGroup]="serverForm">
+
+        <div class="name">
+            <div><span>*</span>Name</div>
+            <input formControlName="name" maxlength="256" required="true">
+        </div>
+        <div class="description">
+            <div>Description</div>
+            <textarea formControlName="description" maxlength="256"></textarea>
+         </div>
+        <div>
+            <div>NAT Space</div>
+            <mat-form-field>
+                <mat-label>Select NAT Space</mat-label>
+                <mat-select  formControlName="nat" required="true">
+                  <mat-option *ngFor="let item of (this.nats$ | async)" [value]="item.id">{{ item.name }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+        <div>
+            <div>IP Address</div>
+            <input type="text" [disabled]="invalid()">
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button matDialogClose="false">Cancel</button>
+    <button mat-button [disabled]="this.serverForm.invalid" (click)="save()">Save & Close</button>
+</mat-dialog-actions>

@@ -1,21 +1,34 @@
 :host {
   display: block;
-  height: 80px;
+  min-height: 80px;
   margin: 18px;
   mat-card {
     border-left: 2px solid red;
 
   }
-  .tile-online {
+  .online {
     border-left: 2px solid green;
+  }
+  .pending {
+    border-left: 2px solid orange;
   }
 
   .first-row {
     display: flex;
-    font-weight: bolder;
-
+    font-weight: 550;
+    align-items: center;
     .name {
         width: 30%;
     }
+    .menu-button {
+        margin-left: auto;
+    }
   }
+
+  .toggle {
+    margin-top: 24px;
+    font-weight: 550;
+  }
+
+
 }

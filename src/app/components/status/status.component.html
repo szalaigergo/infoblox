@@ -1,0 +1,3 @@
+<div class="status"> <mat-icon [fontIcon]="this.getIconName()"
+    [ngClass]="{'green': this.status === 'online', 'red': this.status === 'error', 'orange': this.status === 'pending'}" ></mat-icon> {{ this.status }}
+</div>
